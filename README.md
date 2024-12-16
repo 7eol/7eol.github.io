@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -105,45 +104,6 @@
             cursor: pointer;
             font-size: 16px;
         }
-
-        .upload-section {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            display: none;
-            z-index: 10001;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .upload-section-content {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            max-width: 400px;
-            width: 100%;
-        }
-
-        .upload-section-content input[type="file"] {
-            margin-bottom: 10px;
-        }
-
-        .upload-section-content button {
-            padding: 10px;
-            background-color: #008CBA;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .upload-section-content p {
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
     </style>
 </head>
 <body>
@@ -164,7 +124,7 @@
 
     <div class="content">
         <div class="profile-container">
-            <img id="profile-img" src="default-profile.jpg" alt="Profile Picture">
+            <img id="profile-img" src="pfp.gif" alt="Profile Picture">
             <h1>Username</h1>
             <div class="buttons">
                 <div class="button">
@@ -178,19 +138,6 @@
                     </a>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <button class="upload-button" id="upload-btn">Upload Files</button>
-
-    <div class="upload-section" id="upload-section">
-        <div class="upload-section-content">
-            <h3>Upload Files</h3>
-            <p>Upload a background video (MP4 only):</p>
-            <input type="file" id="background-upload" accept="video/mp4">
-            <p>Upload a profile picture (Image only):</p>
-            <input type="file" id="profile-upload" accept="image/*">
-            <button id="save-upload">Save Changes</button>
         </div>
     </div>
 
@@ -219,34 +166,6 @@
         document.getElementById("volume-slider").addEventListener("input", function () {
             const audio = document.getElementById("background-audio");
             audio.volume = this.value;
-        });
-
-        document.getElementById("upload-btn").addEventListener("click", function () {
-            document.getElementById("upload-section").style.display = "flex";
-        });
-
-        document.getElementById("save-upload").addEventListener("click", function () {
-            const backgroundFile = document.getElementById("background-upload").files[0];
-            const profileFile = document.getElementById("profile-upload").files[0];
-
-            if (backgroundFile) {
-                const reader = new FileReader();
-                reader.onload = function () {
-                    document.getElementById("background-video").src = reader.result;
-                    document.getElementById("background-video").load();
-                };
-                reader.readAsDataURL(backgroundFile);
-            }
-
-            if (profileFile) {
-                const reader = new FileReader();
-                reader.onload = function () {
-                    document.getElementById("profile-img").src = reader.result;
-                };
-                reader.readAsDataURL(profileFile);
-            }
-
-            document.getElementById("upload-section").style.display = "none";
         });
     </script>
 </body>
