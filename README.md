@@ -4,6 +4,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biolink Test</title>
     <style>
+        /* @font-face to load custom font */
+        @font-face {
+            font-family: 'TT Norms Pro Regular';
+            src: url('TT Norms Pro Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Apply the custom font to the body */
         * {
             margin: 0;
             padding: 0;
@@ -11,7 +20,7 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'TT Norms Pro Regular', sans-serif; /* Use the custom font */
             height: 100vh;
             overflow: hidden;
             background: black;
