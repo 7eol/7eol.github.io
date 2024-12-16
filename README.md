@@ -80,15 +80,16 @@
         .button {
             overflow: hidden;
             cursor: pointer;
-            width: 90px; /* Smaller button size */
-            height: 90px; /* Smaller button size */
+            width: 80px; /* Set a fixed width */
+            height: 80px; /* Set a fixed height */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
         }
 
         .button img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Ensures the full image is visible without cropping */
+            object-fit: cover; /* Ensures the full image is visible without cropping */
             object-position: center; /* Centers the image inside the button */
             transition: filter 0.3s ease;
         }
