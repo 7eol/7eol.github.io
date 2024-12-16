@@ -8,10 +8,9 @@
             margin: 0;
             font-family: Arial, sans-serif;
             overflow: hidden;
-            cursor: pointer; /* Pointer cursor to indicate interaction */
+            cursor: pointer;
         }
 
-        /* Initial blurred background video */
         .background-video {
             position: fixed;
             top: 0;
@@ -25,7 +24,6 @@
             pointer-events: none;
         }
 
-        /* Overlay message in the center */
         .overlay-message {
             position: absolute;
             top: 50%;
@@ -36,14 +34,8 @@
             text-align: center;
             cursor: pointer;
             z-index: 100;
-            display: block; /* Keep it visible initially */
         }
 
-        .overlay-message:hover {
-            text-decoration: underline;
-        }
-
-        /* Profile and Website Content - Hidden initially */
         .content {
             visibility: hidden;
             opacity: 0;
@@ -66,11 +58,6 @@
             border: 3px solid white;
         }
 
-        .profile-container h1 {
-            margin: 15px 0;
-            font-size: 2rem;
-        }
-
         .buttons {
             display: flex;
             justify-content: center;
@@ -84,7 +71,6 @@
             cursor: pointer;
         }
 
-        /* Volume button and expanded slider */
         .volume-button {
             position: fixed;
             top: 10px;
@@ -107,111 +93,151 @@
             width: 100px;
         }
 
-        .buttons .button img {
-            width: 100px; /* Modify as needed */
-            height: 100px; /* Modify as needed */
+        .upload-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #008CBA;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .dashboard {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            z-index: 10001;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dashboard-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .dashboard-content input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        .dashboard-content button {
+            padding: 10px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    <!-- Background Video (initially paused and blurred) -->
     <video class="background-video" id="background-video" muted>
         <source src="backgroundvideo.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <!-- Overlay Message (Click to Continue) - Initially visible -->
     <div class="overlay-message" id="overlay-message">
         Click anywhere to enter
     </div>
 
-    <!-- Background Audio -->
     <audio id="background-audio" loop>
         <source src="backgroundaudio.mp3" type="audio/mp3">
         Your browser does not support the audio tag.
     </audio>
 
-    <!-- Volume Control -->
-    <div class="volume-button" onclick="toggleSlider()">
-        <img src="volume-icon.png" alt="Volume Icon">
-    </div>
-    <div class="volume-slider-container" id="volume-slider-container">
-        <input type="range" id="volume" min="0" max="1" step="0.01" value="1" class="volume-slider" onchange="setVolume(this.value)">
-    </div>
-
-    <!-- Profile and Links (Initially Hidden) -->
     <div class="content">
         <div class="profile-container">
-            <img src="pfp.gif" alt="Profile Picture">
-            <h1>7</h1>
-
+            <img id="profile-img" src="default-profile.jpg" alt="Profile Picture">
+            <h1>Username</h1>
             <div class="buttons">
                 <div class="button">
-                    <a href="https://www.youtube.com/@7eyesofluck" target="_blank">
+                    <a href="https://www.youtube.com" target="_blank">
                         <img src="youtube.jpg" alt="YouTube Logo">
                     </a>
                 </div>
                 <div class="button">
                     <a href="https://link2.com" target="_blank">
-                        <img src="button2.jpg" alt="Button Image 2">
-                    </a>
-                </div>
-                <div class="button">
-                    <a href="https://link3.com" target="_blank">
-                        <img src="button3.jpg" alt="Button Image 3">
+                        <img src="button2.jpg" alt="Link 2">
                     </a>
                 </div>
             </div>
         </div>
     </div>
 
+    <button class="upload-button" id="upload-btn">Open Dashboard</button>
+
+    <div class="dashboard" id="dashboard">
+        <div class="dashboard-content">
+            <h3>Upload Files</h3>
+            <input type="file" id="background-upload" accept="video/mp4">
+            <input type="file" id="profile-upload" accept="image/*">
+            <button id="save-upload">Save Changes</button>
+        </div>
+    </div>
+
+    <div class="volume-button" id="volume-btn">
+        <img src="volume-icon.png" alt="Volume Control">
+    </div>
+    <div class="volume-slider-container" id="volume-slider-container">
+        <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.01">
+    </div>
+
     <script>
-        // Function to start the video, audio, and show the website content
-        function startWebsite() {
-            var video = document.getElementById('background-video');
-            var audio = document.getElementById('background-audio');
-            var content = document.querySelector('.content');
-            var overlayMessage = document.getElementById('overlay-message');
-
-            // Play the video and audio
-            video.play();
-            audio.play();
-
-            // Remove the blur and show the content
-            video.style.filter = 'none';
-            content.style.visibility = 'visible';
-            content.style.opacity = '1';
-
-            // Hide the overlay message
-            overlayMessage.style.display = 'none';
-        }
-
-        // Function to adjust the volume of the background audio
-        function setVolume(volume) {
-            var audio = document.getElementById('background-audio');
-            audio.volume = volume;
-        }
-
-        // Function to toggle the visibility of the volume slider
-        function toggleSlider() {
-            var sliderContainer = document.getElementById('volume-slider-container');
-            sliderContainer.style.display = (sliderContainer.style.display === 'block') ? 'none' : 'block';
-        }
-
-        // Event listener for click anywhere to enter the website
-        document.body.addEventListener('click', function() {
-            startWebsite(); // Start video and audio and show content
+        document.getElementById("overlay-message").addEventListener("click", function () {
+            document.getElementById("background-video").play();
+            document.getElementById("background-audio").play();
+            document.getElementById("overlay-message").style.display = "none";
+            document.querySelector(".content").style.visibility = "visible";
+            document.querySelector(".content").style.opacity = 1;
+            document.getElementById("background-video").style.filter = "blur(0)";
         });
 
-        // Check if audio is working by playing it after the page loads
-        window.onload = function() {
-            var audio = document.getElementById('background-audio');
-            audio.play().catch(function(error) {
-                console.log("Audio autoplay failed: ", error);
-            });
-        }
-    </script>
+        document.getElementById("volume-btn").addEventListener("click", function () {
+            const volumeSliderContainer = document.getElementById("volume-slider-container");
+            volumeSliderContainer.style.display = volumeSliderContainer.style.display === "block" ? "none" : "block";
+        });
 
+        document.getElementById("volume-slider").addEventListener("input", function () {
+            const audio = document.getElementById("background-audio");
+            audio.volume = this.value;
+        });
+
+        document.getElementById("upload-btn").addEventListener("click", function () {
+            document.getElementById("dashboard").style.display = "flex";
+        });
+
+        document.getElementById("save-upload").addEventListener("click", function () {
+            const backgroundFile = document.getElementById("background-upload").files[0];
+            const profileFile = document.getElementById("profile-upload").files[0];
+
+            if (backgroundFile) {
+                const reader = new FileReader();
+                reader.onload = function () {
+                    document.getElementById("background-video").src = reader.result;
+                    document.getElementById("background-video").load();
+                };
+                reader.readAsDataURL(backgroundFile);
+            }
+
+            if (profileFile) {
+                const reader = new FileReader();
+                reader.onload = function () {
+                    document.getElementById("profile-img").src = reader.result;
+                };
+                reader.readAsDataURL(profileFile);
+            }
+
+            document.getElementById("dashboard").style.display = "none";
+        });
+    </script>
 </body>
 </html>
