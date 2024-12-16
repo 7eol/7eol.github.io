@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile with Background Video</title>
+    <title>biolink</title>
     <style>
         body {
             margin: 0;
@@ -74,15 +74,10 @@
 </head>
 <body>
 
-    <video class="background-video" autoplay loop muted>
+    <video class="background-video" autoplay loop>
         <source src="backgroundvideo.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-
-    <audio autoplay loop>
-        <source src="background.mp3" type="audio/mpeg">
-        Your browser does not support the audio tag.
-    </audio>
 
     <div class="profile-container">
         <img src="pfp.gif" alt="Profile Picture">
@@ -90,8 +85,8 @@
 
         <div class="buttons">
             <div class="button">
-                <a href="https://link1.com" target="_blank">Link 1</a>
-                <img src="button1.jpg" alt="Button Image 1">
+                <a href="https://www.youtube.com/@7eyesofluck" target="_blank">Youtube</a>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png" alt="Youtube">
             </div>
             <div class="button">
                 <a href="https://link2.com" target="_blank">Link 2</a>
