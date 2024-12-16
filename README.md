@@ -84,12 +84,24 @@
             overflow: hidden;
             cursor: pointer;
             border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .button img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            filter: grayscale(100%) brightness(100%) contrast(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .button:hover img {
+            filter: grayscale(0%) brightness(120%) contrast(120%);
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
 
         .volume-button {
