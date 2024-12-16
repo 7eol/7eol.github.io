@@ -74,14 +74,14 @@
         .buttons {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
         }
 
         .button {
             overflow: hidden;
             cursor: pointer;
-            width: 120px; /* Set fixed width */
-            height: 120px; /* Set fixed height */
+            width: 90px; /* Smaller button size */
+            height: 90px; /* Smaller button size */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
