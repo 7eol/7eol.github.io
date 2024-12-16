@@ -10,6 +10,7 @@
             overflow: hidden;
         }
 
+        /* Initial blurred background video */
         .background-video {
             position: fixed;
             top: 0;
@@ -17,7 +18,34 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            filter: blur(10px);
             z-index: -1;
+            transition: filter 1s ease-in-out;
+            pointer-events: none;
+        }
+
+        /* Overlay message in the center */
+        .overlay-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2rem;
+            text-align: center;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .overlay-message:hover {
+            text-decoration: underline;
+        }
+
+        /* Profile and Website Content - Hidden initially */
+        .content {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
         }
 
         .profile-container {
@@ -85,14 +113,19 @@
 </head>
 <body>
 
-    <!-- Background Video -->
-    <video class="background-video" autoplay loop muted>
+    <!-- Background Video (initially paused and blurred) -->
+    <video class="background-video" id="background-video" muted>
         <source src="backgroundvideo.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
+    <!-- Overlay Message (Click to Continue) -->
+    <div class="overlay-message" id="overlay-message" onclick="startWebsite()">
+        Click here to continue
+    </div>
+
     <!-- Background Audio -->
-    <audio id="background-audio" autoplay loop>
+    <audio id="background-audio" loop>
         <source src="backgroundaudio.mp3" type="audio/mp3">
         Your browser does not support the audio tag.
     </audio>
@@ -105,31 +138,53 @@
         <input type="range" id="volume" min="0" max="1" step="0.01" value="1" class="volume-slider" onchange="setVolume(this.value)">
     </div>
 
-    <!-- Profile and Links -->
-    <div class="profile-container">
-        <img src="pfp.gif" alt="Profile Picture">
-        <h1>7</h1>
+    <!-- Profile and Links (Initially Hidden) -->
+    <div class="content">
+        <div class="profile-container">
+            <img src="pfp.gif" alt="Profile Picture">
+            <h1>7</h1>
 
-        <div class="buttons">
-            <div class="button">
-                <a href="https://www.youtube.com/@7eyesofluck" target="_blank">
-                    <img src="youtube.jpg" alt="YouTube Logo">
-                </a>
-            </div>
-            <div class="button">
-                <a href="https://link2.com" target="_blank">
-                    <img src="button2.jpg" alt="Button Image 2">
-                </a>
-            </div>
-            <div class="button">
-                <a href="https://link3.com" target="_blank">
-                    <img src="button3.jpg" alt="Button Image 3">
-                </a>
+            <div class="buttons">
+                <div class="button">
+                    <a href="https://www.youtube.com/@7eyesofluck" target="_blank">
+                        <img src="youtube.jpg" alt="YouTube Logo">
+                    </a>
+                </div>
+                <div class="button">
+                    <a href="https://link2.com" target="_blank">
+                        <img src="button2.jpg" alt="Button Image 2">
+                    </a>
+                </div>
+                <div class="button">
+                    <a href="https://link3.com" target="_blank">
+                        <img src="button3.jpg" alt="Button Image 3">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
+        // Function to start the video, audio, and show the website content
+        function startWebsite() {
+            var video = document.getElementById('background-video');
+            var audio = document.getElementById('background-audio');
+            var content = document.querySelector('.content');
+            var overlayMessage = document.getElementById('overlay-message');
+
+            // Play the video and audio
+            video.play();
+            audio.play();
+
+            // Remove the blur and show the content
+            video.style.filter = 'none';
+            content.style.visibility = 'visible';
+            content.style.opacity = '1';
+
+            // Hide the overlay message
+            overlayMessage.style.display = 'none';
+        }
+
         // Function to adjust the volume of the background audio
         function setVolume(volume) {
             var audio = document.getElementById('background-audio');
@@ -147,7 +202,6 @@
             var audio = document.getElementById('background-audio');
             audio.play().catch(function(error) {
                 console.log("Audio autoplay failed: ", error);
-                // Here, you can show an alert or try another method to play the audio
             });
         }
     </script>
