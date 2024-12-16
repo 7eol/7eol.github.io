@@ -4,10 +4,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biolink Test</title>
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
             overflow: hidden;
+            background: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             cursor: pointer;
         }
 
@@ -18,37 +30,24 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: blur(10px);
             z-index: -1;
-            transition: filter 1s ease-in-out;
+            filter: blur(10px);
             pointer-events: none;
         }
 
         .overlay-message {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
             font-size: 2rem;
             text-align: center;
             cursor: pointer;
-            z-index: 100;
+            z-index: 1;
         }
 
         .content {
-            visibility: hidden;
+            display: none;
             opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .profile-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            transition: opacity 1s ease;
             text-align: center;
-            color: white;
+            z-index: 2;
         }
 
         .profile-container img {
@@ -56,6 +55,12 @@
             height: 150px;
             border-radius: 50%;
             border: 3px solid white;
+            margin-bottom: 20px;
+        }
+
+        .profile-container h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
         }
 
         .buttons {
@@ -64,11 +69,19 @@
             gap: 15px;
         }
 
-        .button img {
-            width: 60px;
-            height: 60px;
-            object-fit: cover;
+        .button {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 15px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
             cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: rgba(255, 255, 255, 0.5);
         }
 
         .volume-button {
@@ -76,7 +89,7 @@
             top: 10px;
             left: 10px;
             cursor: pointer;
-            z-index: 9999;
+            z-index: 3;
         }
 
         .volume-slider-container {
@@ -84,13 +97,17 @@
             top: 70px;
             left: 10px;
             display: none;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.7);
             padding: 10px;
             border-radius: 5px;
         }
 
         .volume-slider {
             width: 100px;
+        }
+
+        .volume-slider-container input {
+            width: 100%;
         }
     </style>
 </head>
@@ -110,21 +127,14 @@
         Your browser does not support the audio tag.
     </audio>
 
-    <div class="content">
+    <div class="content" id="content">
         <div class="profile-container">
             <img id="profile-img" src="pfp.gif" alt="Profile Picture">
-            <h1>Username</h1>
+            <h1>Your Name</h1>
             <div class="buttons">
-                <div class="button">
-                    <a href="https://www.youtube.com" target="_blank">
-                        <img src="youtube.jpg" alt="YouTube Logo">
-                    </a>
-                </div>
-                <div class="button">
-                    <a href="https://link2.com" target="_blank">
-                        <img src="button2.jpg" alt="Link 2">
-                    </a>
-                </div>
+                <a href="https://www.youtube.com" target="_blank" class="button">YouTube</a>
+                <a href="https://link2.com" target="_blank" class="button">Link 2</a>
+                <a href="https://link3.com" target="_blank" class="button">Link 3</a>
             </div>
         </div>
     </div>
@@ -132,6 +142,7 @@
     <div class="volume-button" id="volume-btn">
         <img src="volume-icon.png" alt="Volume Control">
     </div>
+
     <div class="volume-slider-container" id="volume-slider-container">
         <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.01">
     </div>
@@ -141,8 +152,8 @@
             document.getElementById("background-video").play();
             document.getElementById("background-audio").play();
             document.getElementById("overlay-message").style.display = "none";
-            document.querySelector(".content").style.visibility = "visible";
-            document.querySelector(".content").style.opacity = 1;
+            document.getElementById("content").style.display = "block";
+            document.getElementById("content").style.opacity = 1;
             document.getElementById("background-video").style.filter = "blur(0)";
         });
 
@@ -156,5 +167,6 @@
             audio.volume = this.value;
         });
     </script>
+
 </body>
 </html>
