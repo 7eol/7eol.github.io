@@ -29,7 +29,6 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            cursor: url('cursor.png'), auto; /* Custom cursor */
         }
 
         .background-video {
@@ -146,11 +145,11 @@
     <div class="content" id="content">
         <div class="profile-container">
             <img id="profile-img" src="pfp.gif" alt="Profile Picture">
-            <h1>Your Name</h1>
+            <h1>7</h1> <!-- Changed to "7" -->
             <div class="buttons">
                 <div class="button">
-                    <a href="https://www.youtube.com" target="_blank">
-                        <img src="youtube-icon.png" alt="YouTube">
+                    <a href="https://www.youtube.com/@7eyesofluck" target="_blank">
+                        <img src="youtube.png" alt="YouTube"> <!-- YouTube button image -->
                     </a>
                 </div>
                 <div class="button">
