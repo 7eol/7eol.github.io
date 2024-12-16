@@ -78,10 +78,10 @@
         }
 
         .button {
+            width: 50px; /* Set fixed width of 50px */
+            height: 50px; /* Set fixed height of 50px */
             overflow: hidden;
             cursor: pointer;
-            width: 50px; /* Set a fixed width of 50px */
-            height: 50px; /* Set a fixed height of 50px */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: inline-block;
         }
@@ -205,4 +205,3 @@
 
 </body>
 </html>
-
