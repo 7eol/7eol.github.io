@@ -141,6 +141,15 @@
             var sliderContainer = document.getElementById('volume-slider-container');
             sliderContainer.style.display = (sliderContainer.style.display === 'block') ? 'none' : 'block';
         }
+
+        // Check if audio is working by playing it after the page loads
+        window.onload = function() {
+            var audio = document.getElementById('background-audio');
+            audio.play().catch(function(error) {
+                console.log("Audio autoplay failed: ", error);
+                // Here, you can show an alert or try another method to play the audio
+            });
+        }
     </script>
 
 </body>
