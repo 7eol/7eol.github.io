@@ -91,11 +91,6 @@
             height: 100%;
             object-fit: contain; /* Ensures the full image is shown */
             object-position: center; /* Centers the image inside the button */
-            transition: filter 0.3s ease;
-        }
-
-        .button:hover img {
-            filter: grayscale(0%) brightness(120%) contrast(120%);
         }
 
         .button:hover {
