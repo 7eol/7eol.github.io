@@ -80,8 +80,8 @@
         .button {
             overflow: hidden;
             cursor: pointer;
-            width: 80px; /* Set a fixed width */
-            height: 80px; /* Set a fixed height */
+            width: 50px; /* Set a fixed width of 50px */
+            height: 50px; /* Set a fixed height of 50px */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: inline-block;
         }
@@ -89,7 +89,7 @@
         .button img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures the full image is visible without cropping */
+            object-fit: contain; /* Ensures the full image is visible */
             object-position: center; /* Centers the image inside the button */
             transition: filter 0.3s ease;
         }
