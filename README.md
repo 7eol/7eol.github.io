@@ -47,42 +47,39 @@
             gap: 15px;
         }
 
-        .button {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .button img {
             width: 60px;
             height: 60px;
-            border-radius: 50%;
-            overflow: hidden;
+            object-fit: cover;
             cursor: pointer;
         }
 
-        .button img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .button a {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            text-indent: -9999px;
-        }
-
-        /* Volume slider */
-        .volume-slider {
+        /* Volume button and expanded slider */
+        .volume-button {
             position: fixed;
             top: 10px;
             left: 10px;
+            cursor: pointer;
             z-index: 9999;
+        }
+
+        .volume-slider-container {
+            position: fixed;
+            top: 70px;
+            left: 10px;
+            display: none;
             background: rgba(0, 0, 0, 0.5);
             padding: 10px;
             border-radius: 5px;
+        }
+
+        .volume-slider {
+            width: 100px;
+        }
+
+        .buttons .button img {
+            width: 100px; /* Modify as needed */
+            height: 100px; /* Modify as needed */
         }
     </style>
 </head>
@@ -100,10 +97,12 @@
         Your browser does not support the audio tag.
     </audio>
 
-    <!-- Volume Control Slider -->
-    <div class="volume-slider">
-        <label for="volume">Volume</label>
-        <input type="range" id="volume" min="0" max="1" step="0.01" value="1" onchange="setVolume(this.value)">
+    <!-- Volume Control -->
+    <div class="volume-button" onclick="toggleSlider()">
+        <img src="volume-icon.png" alt="Volume Icon">
+    </div>
+    <div class="volume-slider-container" id="volume-slider-container">
+        <input type="range" id="volume" min="0" max="1" step="0.01" value="1" class="volume-slider" onchange="setVolume(this.value)">
     </div>
 
     <!-- Profile and Links -->
@@ -113,16 +112,19 @@
 
         <div class="buttons">
             <div class="button">
-                <a href="https://www.youtube.com/@7eyesofluck" target="_blank">YouTube</a>
-                <img src="youtube.jpg" alt="YouTube Logo">
+                <a href="https://www.youtube.com/@7eyesofluck" target="_blank">
+                    <img src="youtube.jpg" alt="YouTube Logo">
+                </a>
             </div>
             <div class="button">
-                <a href="https://link2.com" target="_blank">Link 2</a>
-                <img src="button2.jpg" alt="Button Image 2">
+                <a href="https://link2.com" target="_blank">
+                    <img src="button2.jpg" alt="Button Image 2">
+                </a>
             </div>
             <div class="button">
-                <a href="https://link3.com" target="_blank">Link 3</a>
-                <img src="button3.jpg" alt="Button Image 3">
+                <a href="https://link3.com" target="_blank">
+                    <img src="button3.jpg" alt="Button Image 3">
+                </a>
             </div>
         </div>
     </div>
@@ -133,8 +135,13 @@
             var audio = document.getElementById('background-audio');
             audio.volume = volume;
         }
+
+        // Function to toggle the visibility of the volume slider
+        function toggleSlider() {
+            var sliderContainer = document.getElementById('volume-slider-container');
+            sliderContainer.style.display = (sliderContainer.style.display === 'block') ? 'none' : 'block';
+        }
     </script>
 
 </body>
 </html>
-
