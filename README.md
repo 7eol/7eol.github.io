@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>biolink</title>
+    <title>Biolink Test</title>
     <style>
         body {
             margin: 0;
@@ -48,6 +48,7 @@
         }
 
         .button {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -66,6 +67,8 @@
 
         .button a {
             position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             text-indent: -9999px;
@@ -81,12 +84,12 @@
 
     <div class="profile-container">
         <img src="pfp.gif" alt="Profile Picture">
-        <h1>Your Name</h1>
+        <h1>7</h1>
 
         <div class="buttons">
             <div class="button">
-                <a href="https://www.youtube.com/@7eyesofluck" target="_blank">Youtube</a>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png" alt="Youtube">
+                <a href="https://www.youtube.com/@7eyesofluck" target="_blank">YouTube</a>
+                <img src="youtube.jpg" alt="YouTube Logo">
             </div>
             <div class="button">
                 <a href="https://link2.com" target="_blank">Link 2</a>
