@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="profile">
-            <img src="your-profile-picture.jpg" alt="Profile Picture" class="profile-img">
+            <img src="https://i.postimg.cc/Yq3STLFZ/IMG-0532-ezgif-com-crop.gif" alt="Profile Picture" class="profile-img">
             <h1>John Doe</h1>
             <p class="bio">Welcome to my link tree! Check out my projects and social media.</p>
         </div>
