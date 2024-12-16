@@ -76,7 +76,7 @@
 <body>
 
     <video class="background-video" autoplay loop muted>
-        <source src="backgroundvideo.gif" type="video/mp4">
+        <source src="backgroundvideo.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
