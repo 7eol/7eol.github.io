@@ -76,7 +76,7 @@
 <body>
 
     <video class="background-video" autoplay loop muted>
-        <source src="background.mp4" type="video/mp4">
+        <source src="backgroundvideo.gif" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
@@ -86,7 +86,7 @@
     </audio>
 
     <div class="profile-container">
-        <img src="profile.jpg" alt="Profile Picture">
+        <img src="pfp.gif" alt="Profile Picture">
         <h1>Your Name</h1>
 
         <div class="buttons">
