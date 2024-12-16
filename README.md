@@ -92,18 +92,6 @@
         .volume-slider {
             width: 100px;
         }
-
-        .upload-button {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background-color: #008CBA;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
     </style>
 </head>
 <body>
@@ -125,7 +113,7 @@
     <div class="content">
         <div class="profile-container">
             <img id="profile-img" src="pfp.gif" alt="Profile Picture">
-            <h1>7</h1>
+            <h1>Username</h1>
             <div class="buttons">
                 <div class="button">
                     <a href="https://www.youtube.com" target="_blank">
