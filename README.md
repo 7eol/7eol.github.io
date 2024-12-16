@@ -106,7 +106,7 @@
             font-size: 16px;
         }
 
-        .dashboard {
+        .upload-section {
             position: fixed;
             top: 0;
             left: 0;
@@ -119,7 +119,7 @@
             align-items: center;
         }
 
-        .dashboard-content {
+        .upload-section-content {
             background: white;
             padding: 20px;
             border-radius: 8px;
@@ -128,11 +128,11 @@
             width: 100%;
         }
 
-        .dashboard-content input[type="file"] {
+        .upload-section-content input[type="file"] {
             margin-bottom: 10px;
         }
 
-        .dashboard-content button {
+        .upload-section-content button {
             padding: 10px;
             background-color: #008CBA;
             color: white;
@@ -140,7 +140,7 @@
             cursor: pointer;
         }
 
-        .dashboard-content p {
+        .upload-section-content p {
             margin-bottom: 10px;
             font-size: 1.2rem;
         }
@@ -181,10 +181,10 @@
         </div>
     </div>
 
-    <a href="/dashboard" class="upload-button" id="upload-btn">Open Dashboard</a>
+    <button class="upload-button" id="upload-btn">Upload Files</button>
 
-    <div class="dashboard" id="dashboard">
-        <div class="dashboard-content">
+    <div class="upload-section" id="upload-section">
+        <div class="upload-section-content">
             <h3>Upload Files</h3>
             <p>Upload a background video (MP4 only):</p>
             <input type="file" id="background-upload" accept="video/mp4">
@@ -221,6 +221,10 @@
             audio.volume = this.value;
         });
 
+        document.getElementById("upload-btn").addEventListener("click", function () {
+            document.getElementById("upload-section").style.display = "flex";
+        });
+
         document.getElementById("save-upload").addEventListener("click", function () {
             const backgroundFile = document.getElementById("background-upload").files[0];
             const profileFile = document.getElementById("profile-upload").files[0];
@@ -242,7 +246,7 @@
                 reader.readAsDataURL(profileFile);
             }
 
-            document.getElementById("dashboard").style.display = "none";
+            document.getElementById("upload-section").style.display = "none";
         });
     </script>
 </body>
