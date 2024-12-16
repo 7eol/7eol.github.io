@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -79,18 +80,17 @@
         }
 
         .button {
-            background: rgba(255, 255, 255, 0.3);
-            padding: 15px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
             cursor: pointer;
-            transition: background 0.3s ease;
+            border-radius: 5px;
         }
 
-        .button:hover {
-            background: rgba(255, 255, 255, 0.5);
+        .button img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .volume-button {
@@ -141,9 +141,21 @@
             <img id="profile-img" src="pfp.gif" alt="Profile Picture">
             <h1>Your Name</h1>
             <div class="buttons">
-                <a href="https://www.youtube.com" target="_blank" class="button">YouTube</a>
-                <a href="https://link2.com" target="_blank" class="button">Link 2</a>
-                <a href="https://link3.com" target="_blank" class="button">Link 3</a>
+                <div class="button">
+                    <a href="https://www.youtube.com" target="_blank">
+                        <img src="youtube-icon.png" alt="YouTube">
+                    </a>
+                </div>
+                <div class="button">
+                    <a href="https://link2.com" target="_blank">
+                        <img src="button2-icon.png" alt="Button 2">
+                    </a>
+                </div>
+                <div class="button">
+                    <a href="https://link3.com" target="_blank">
+                        <img src="button3-icon.png" alt="Button 3">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -157,22 +169,28 @@
     </div>
 
     <script>
+        // Set the default volume lower
+        const audio = document.getElementById("background-audio");
+        audio.volume = 0.3;  // Set default volume to 30%
+
+        // Play video and audio when clicked
         document.getElementById("overlay-message").addEventListener("click", function () {
             document.getElementById("background-video").play();
-            document.getElementById("background-audio").play();
+            audio.play();
             document.getElementById("overlay-message").style.display = "none";
             document.getElementById("content").style.display = "block";
             document.getElementById("content").style.opacity = 1;
             document.getElementById("background-video").style.filter = "blur(0)";
         });
 
+        // Toggle volume slider
         document.getElementById("volume-btn").addEventListener("click", function () {
             const volumeSliderContainer = document.getElementById("volume-slider-container");
             volumeSliderContainer.style.display = volumeSliderContainer.style.display === "block" ? "none" : "block";
         });
 
+        // Change volume based on slider input
         document.getElementById("volume-slider").addEventListener("input", function () {
-            const audio = document.getElementById("background-audio");
             audio.volume = this.value;
         });
     </script>
