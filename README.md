@@ -78,11 +78,8 @@
         }
 
         .button {
-            width: 60px;
-            height: 60px;
             overflow: hidden;
             cursor: pointer;
-            border-radius: 5px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -100,7 +97,7 @@
 
         .button:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glow effect around the image */
         }
 
         .volume-button {
