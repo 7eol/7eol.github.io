@@ -29,7 +29,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            cursor: pointer;
+            cursor: url('cursor.png'), auto; /* Custom cursor */
         }
 
         .background-video {
@@ -40,16 +40,9 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
-            filter: blur(10px);
+            filter: blur(10px); /* Initially apply blur */
             pointer-events: none;
-            animation: loopVideo 1s infinite;
-        }
-
-        /* Animation for continuous looping of video */
-        @keyframes loopVideo {
-            0% { opacity: 0; }
-            50% { opacity: 1; }
-            100% { opacity: 0; }
+            transition: filter 1s ease-in-out;
         }
 
         .overlay-message {
@@ -132,10 +125,6 @@
         .volume-slider {
             width: 100px;
         }
-
-        .volume-slider-container input {
-            width: 100%;
-        }
     </style>
 </head>
 <body>
@@ -199,7 +188,7 @@
                 document.getElementById("overlay-message").style.display = "none";
                 document.getElementById("content").style.display = "block";
                 document.getElementById("content").style.opacity = 1;
-                document.getElementById("background-video").style.filter = "blur(0)";
+                document.getElementById("background-video").style.filter = "blur(0)"; // Remove blur after play
             }
         });
 
