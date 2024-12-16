@@ -42,6 +42,14 @@
             z-index: -1;
             filter: blur(10px);
             pointer-events: none;
+            animation: loopVideo 1s infinite;
+        }
+
+        /* Animation for continuous looping of video */
+        @keyframes loopVideo {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
         }
 
         .overlay-message {
@@ -63,7 +71,6 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 3px solid white;
             margin-bottom: 20px;
         }
 
@@ -133,7 +140,7 @@
 </head>
 <body>
 
-    <video class="background-video" id="background-video" muted>
+    <video class="background-video" id="background-video" muted loop>
         <source src="backgroundvideo.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -184,14 +191,16 @@
         const audio = document.getElementById("background-audio");
         audio.volume = 0.3;  // Set default volume to 30%
 
-        // Play video and audio when clicked
-        document.getElementById("overlay-message").addEventListener("click", function () {
-            document.getElementById("background-video").play();
-            audio.play();
-            document.getElementById("overlay-message").style.display = "none";
-            document.getElementById("content").style.display = "block";
-            document.getElementById("content").style.opacity = 1;
-            document.getElementById("background-video").style.filter = "blur(0)";
+        // Play video and audio when clicked anywhere
+        document.body.addEventListener("click", function () {
+            if (audio.paused && document.getElementById("background-video").paused) {
+                document.getElementById("background-video").play();
+                audio.play();
+                document.getElementById("overlay-message").style.display = "none";
+                document.getElementById("content").style.display = "block";
+                document.getElementById("content").style.opacity = 1;
+                document.getElementById("background-video").style.filter = "blur(0)";
+            }
         });
 
         // Toggle volume slider
