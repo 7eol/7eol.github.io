@@ -8,6 +8,7 @@
             margin: 0;
             font-family: Arial, sans-serif;
             overflow: hidden;
+            cursor: pointer; /* Pointer cursor to indicate interaction */
         }
 
         /* Initial blurred background video */
@@ -35,6 +36,7 @@
             text-align: center;
             cursor: pointer;
             z-index: 100;
+            display: block; /* Keep it visible initially */
         }
 
         .overlay-message:hover {
@@ -119,9 +121,9 @@
         Your browser does not support the video tag.
     </video>
 
-    <!-- Overlay Message (Click to Continue) -->
-    <div class="overlay-message" id="overlay-message" onclick="startWebsite()">
-        Click here to continue
+    <!-- Overlay Message (Click to Continue) - Initially visible -->
+    <div class="overlay-message" id="overlay-message">
+        Click anywhere to enter
     </div>
 
     <!-- Background Audio -->
@@ -196,6 +198,11 @@
             var sliderContainer = document.getElementById('volume-slider-container');
             sliderContainer.style.display = (sliderContainer.style.display === 'block') ? 'none' : 'block';
         }
+
+        // Event listener for click anywhere to enter the website
+        document.body.addEventListener('click', function() {
+            startWebsite(); // Start video and audio and show content
+        });
 
         // Check if audio is working by playing it after the page loads
         window.onload = function() {
