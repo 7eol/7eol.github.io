@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -123,6 +124,8 @@
             padding: 20px;
             border-radius: 8px;
             text-align: center;
+            max-width: 400px;
+            width: 100%;
         }
 
         .dashboard-content input[type="file"] {
@@ -135,6 +138,11 @@
             color: white;
             border: none;
             cursor: pointer;
+        }
+
+        .dashboard-content p {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
         }
     </style>
 </head>
@@ -173,12 +181,14 @@
         </div>
     </div>
 
-    <button class="upload-button" id="upload-btn">Open Dashboard</button>
+    <a href="/dashboard" class="upload-button" id="upload-btn">Open Dashboard</a>
 
     <div class="dashboard" id="dashboard">
         <div class="dashboard-content">
             <h3>Upload Files</h3>
+            <p>Upload a background video (MP4 only):</p>
             <input type="file" id="background-upload" accept="video/mp4">
+            <p>Upload a profile picture (Image only):</p>
             <input type="file" id="profile-upload" accept="image/*">
             <button id="save-upload">Save Changes</button>
         </div>
@@ -209,10 +219,6 @@
         document.getElementById("volume-slider").addEventListener("input", function () {
             const audio = document.getElementById("background-audio");
             audio.volume = this.value;
-        });
-
-        document.getElementById("upload-btn").addEventListener("click", function () {
-            document.getElementById("dashboard").style.display = "flex";
         });
 
         document.getElementById("save-upload").addEventListener("click", function () {
