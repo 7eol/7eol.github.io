@@ -73,15 +73,40 @@
             height: 100%;
             text-indent: -9999px;
         }
+
+        /* Volume slider */
+        .volume-slider {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
 
-    <video class="background-video" autoplay loop>
+    <!-- Background Video -->
+    <video class="background-video" autoplay loop muted>
         <source src="backgroundvideo.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
+    <!-- Background Audio -->
+    <audio id="background-audio" autoplay loop>
+        <source src="backgroundaudio.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <!-- Volume Control Slider -->
+    <div class="volume-slider">
+        <label for="volume">Volume</label>
+        <input type="range" id="volume" min="0" max="1" step="0.01" value="1" onchange="setVolume(this.value)">
+    </div>
+
+    <!-- Profile and Links -->
     <div class="profile-container">
         <img src="pfp.gif" alt="Profile Picture">
         <h1>7</h1>
@@ -102,5 +127,14 @@
         </div>
     </div>
 
+    <script>
+        // Function to adjust the volume of the background audio
+        function setVolume(volume) {
+            var audio = document.getElementById('background-audio');
+            audio.volume = volume;
+        }
+    </script>
+
 </body>
 </html>
+
