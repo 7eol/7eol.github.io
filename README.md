@@ -80,14 +80,16 @@
         .button {
             overflow: hidden;
             cursor: pointer;
+            width: 120px; /* Set fixed width */
+            height: 120px; /* Set fixed height */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .button img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Ensures the full image is visible */
-            object-position: center; /* Centers the image within the button */
+            object-fit: contain; /* Ensures the full image is visible without cropping */
+            object-position: center; /* Centers the image inside the button */
             transition: filter 0.3s ease;
         }
 
