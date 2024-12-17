@@ -180,7 +180,7 @@
                 <div class="button">
                     <a target="_blank" href="https://roblox.com/users/938926711">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0.16 0 23.68 24">
-                            <path fill="currentColor" d="M5.164 0L.16 18.928L18.836 24L23.84 5.072Zm8.747 15.354l-5.184-2.547l1.366-4.779L12.035 7l4.482 2.108l-1.378 4.744l-5.184-2.547Z"></path>
+                            <path fill="currentColor" d="M5.164 0L.16 18.928L18.836 24L23.84 5.072Zm8.747 15.354l-5.219-1.417l1.399-5.29l5.22 1.418l-1.4 5.29z"></path>
                         </svg>
                     </a>
                 </div>
@@ -189,10 +189,9 @@
     </div>
 
     <div class="volume-button" id="volume-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="2.34 1.64 19.33 20.72">
-            <path fill="currentColor" d="M15.956 2.39l1.15-.92a2.08 2.08 0 0 1 2.57 3.28l-.9 1.14A8.63 8.63 0 0 1 19 11a8.63 8.63 0 0 1-1.33 5.09l.87 1.14a2.08 2.08 0 0 1-2.57 3.29l-1.15-.92a8.88 8.88 0 0 0 0-11.4ZM6.11 3.85l.92-.9A2.08 2.08 0 0 1 8.8 3.99l1.35 1.27A6.53 6.53 0 0 0 9.44 7L7.86 5.74A2.08 2.08 0 0 1 6.11 3.85Zm6.56 7.14a3.9 3.9 0 0 0 0-1.57L9.6 8.24a3.9 3.9 0 0 0-5.35 5.3L3.29 15.2A8.7 8.7 0 0 1 5.77 12.3c0-.92 1.34-.92 1.29-.92a3.89 3.89 0 0 0 5.38 3.18z"></path>
-        </svg>
+        <img src="volume-icon.png" alt="Volume Icon" width="20" height="20">
     </div>
+
     
     <div class="volume-slider-container" id="volume-slider-container">
         <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.01" value="0.3">
