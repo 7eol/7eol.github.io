@@ -87,6 +87,7 @@
             justify-content: center;
             align-items: center;
             border-radius: 0; /* Ensure buttons are not circular */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
 
         .button svg {
