@@ -119,26 +119,30 @@
         }
 
         .volume-button:hover {
-            width: 100px; /* Expands to the right */
-        }
-
-        .volume-button svg {
-            fill: lightgray;
-            transition: fill 0.3s ease;
+            width: 120px; /* Expands to the right */
         }
 
         .volume-slider-container {
-            position: fixed;
-            top: 70px;
-            left: 10px;
-            display: none;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            border-radius: 5px;
+            position: absolute;
+            top: 0;
+            left: 40px;
+            width: 80px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .volume-button:hover .volume-slider-container {
+            opacity: 1;
+            pointer-events: auto;
         }
 
         .volume-slider {
-            width: 100px;
+            width: 100%;
         }
     </style>
 </head>
@@ -162,7 +166,16 @@
             <img id="profile-img" src="pfp.gif" alt="Profile Picture">
             <h1>7</h1>
             <div class="buttons">
-                <!-- Buttons code here -->
+                <div class="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM17 16.59L15.59 18 12 14.41 8.41 18 7 16.59 10.59 13 7 9.41 8.41 8 12 11.59 15.59 8 17 9.41 13.41 13 17 16.59z"></path>
+                    </svg>
+                </div>
+                <div class="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M3 9v6h3l4 4V5L6 9H3zm15 6c0-.55-.45-1-1-1h-2v2h2c.55 0 1-.45 1-1z"></path>
+                    </svg>
+                </div>
             </div>
         </div>
     </div>
@@ -171,10 +184,9 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
             <path fill="currentColor" d="M3 9v6h3l4 4V5L6 9H3zm15 6c0-.55-.45-1-1-1h-2v2h2c.55 0 1-.45 1-1z"></path>
         </svg>
-    </div>
-
-    <div class="volume-slider-container">
-        <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="0.5">
+        <div class="volume-slider-container">
+            <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="0.5">
+        </div>
     </div>
 
     <script>
@@ -182,8 +194,6 @@
         const content = document.getElementById('content');
         const backgroundVideo = document.getElementById('background-video');
         const backgroundAudio = document.getElementById('background-audio');
-        const volumeButton = document.getElementById('volume-button');
-        const volumeSliderContainer = document.querySelector('.volume-slider-container');
         const volumeSlider = document.querySelector('.volume-slider');
 
         // Handle click to enter
@@ -197,11 +207,6 @@
             // Play video and audio
             backgroundVideo.play();
             backgroundAudio.play();
-        });
-
-        // Toggle volume slider visibility
-        volumeButton.addEventListener('click', () => {
-            volumeSliderContainer.style.display = volumeSliderContainer.style.display === 'none' ? 'block' : 'none';
         });
 
         // Adjust audio volume
