@@ -96,7 +96,7 @@
 
         .button:hover {
             transform: scale(1.1);
-            box-shadow: none;
+            box-shadow: none
         }
 
         .volume-button {
@@ -146,8 +146,7 @@
                 <div class="button">
                     <a target="_blank" href="https://youtube.com/@7eyesofluck">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="1.99 5 20.01 14.01">
-                            <path fill="currentColor" d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765c1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6l5.207 3.005l-5.212 2.995z">
-                            </path>
+                            <path fill="currentColor" d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765c1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6l5.207 3.005l-5.212 2.995z"></path>
                         </svg>
                     </a>
                 </div>
@@ -181,23 +180,53 @@
                 <div class="button">
                     <a target="_blank" href="https://roblox.com/users/938926711">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0.16 0 23.68 24">
-                            <path fill="currentColor" d="M5.164 0L.16 18.928L18.836 24L23.84 5.072Zm8.747 15.354l-5.219-1.417l1.399-5.29l5.22 1.418l-1.4 5.29z"></path>
+                            <path fill="currentColor" d="M5.164 0L.16 18.928L18.836 24L23.84 5.072Zm8.747 15.354l-5.184-2.547l1.366-4.779L12.035 7l4.482 2.108l-1.378 4.744l-5.184-2.547Z"></path>
                         </svg>
                     </a>
                 </div>
-
-                <div class="button">
-                    <a target="_blank" href="https://instagram.com/7eyesofluck">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="3 2.98 18.01 18.04">
-                            <path fill="currentColor" d="M20.947 8.305a6.53 6.53 0 0 0-.419-2.216a4.61 4.61 0 0 0-2.633-2.633a6.606 6.606 0 0 0-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 0 0-2.185.42a4.607 4.607 0 0 0-2.633 2.633a6.554 6.554 0 0 0-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632a6.584 6.584 0 0 0 2.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 0 0 2.186-.419a4.615 4.615 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.187c.043-.962.056-1.267.056-3.71c-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 1 1 0 9.245zm4.342-5.22a1.75 1.75 0 0 1-1.745 1.745a1.749 1.749 0 0 1-1.747-1.745a1.749 1.749 0 1 1 3.492 0z"></path>
-                        </svg>
-                    </a>
-                </div>
-
             </div>
         </div>
     </div>
 
+    <div class="volume-button" id="volume-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="2.34 1.64 19.33 20.72">
+            <path fill="currentColor" d="M15.956 2.39l1.15-.92a2.08 2.08 0 0 1 2.57 3.28l-.9 1.14A8.63 8.63 0 0 1 19 11a8.63 8.63 0 0 1-1.33 5.09l.87 1.14a2.08 2.08 0 0 1-2.57 3.29l-1.15-.92a8.88 8.88 0 0 0 0-11.4ZM6.11 3.85l.92-.9A2.08 2.08 0 0 1 8.8 3.99l1.35 1.27A6.53 6.53 0 0 0 9.44 7L7.86 5.74A2.08 2.08 0 0 1 6.11 3.85Zm6.56 7.14a3.9 3.9 0 0 0 0-1.57L9.6 8.24a3.9 3.9 0 0 0-5.35 5.3L3.29 15.2A8.7 8.7 0 0 1 5.77 12.3c0-.92 1.34-.92 1.29-.92a3.89 3.89 0 0 0 5.38 3.18z"></path>
+        </svg>
+    </div>
+    
+    <div class="volume-slider-container" id="volume-slider-container">
+        <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.01" value="0.3">
+    </div>
+
+    <script>
+        // Set the default volume lower
+        const audio = document.getElementById("background-audio");
+        audio.volume = 0.3;  // Set default volume to 30%
+
+        // Play video and audio when clicked anywhere
+        document.body.addEventListener("click", function () {
+            const video = document.getElementById("background-video");
+            if (audio.paused && video.paused) {
+                video.play();
+                audio.play();
+                document.getElementById("overlay-message").style.display = "none"; // Hide the overlay message
+                document.getElementById("content").style.display = "block"; // Show the content
+                document.getElementById("content").style.opacity = 1;
+                video.style.filter = "blur(0)"; // Remove blur after play
+            }
+        });
+
+        // Toggle volume slider
+        document.getElementById("volume-btn").addEventListener("click", function () {
+            const volumeSliderContainer = document.getElementById("volume-slider-container");
+            volumeSliderContainer.style.display = volumeSliderContainer.style.display === "block" ? "none" : "block";
+        });
+
+        // Change volume based on slider input
+        document.getElementById("volume-slider").addEventListener("input", function () {
+            audio.volume = this.value;
+        });
+    </script>
+
 </body>
 </html>
-
