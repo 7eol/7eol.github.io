@@ -77,13 +77,18 @@
             gap: 10px;
         }
 
-        .button {
-            width: 50px; /* Fixed width of 50px */
-            height: 50px; /* Fixed height of 50px */
+       .button {
+            width: 50px; /* Keep this as intended dimensions */
+            height: 50px;
             overflow: hidden;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: inline-block;
+
+            /* Ensure no unintended border-radius */
+            border-radius: 0; /* Change from 50% or remove entirely */
+        }        
+
         }
 
         .button img {
