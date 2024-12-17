@@ -1,9 +1,9 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biolink Test</title>
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Biolink Test</title>
+        <style>
         /* @font-face to load custom font */
         @font-face {
             font-family: 'TT Norms Pro Regular';
@@ -77,31 +77,35 @@
             gap: 10px;
         }
 
-        /* Styling for buttons with hover glow effect */
+       /* Styling for buttons with glowing outline effect */
         .button {
             width: 30px;
             height: 30px;
             overflow: visible;
             cursor: pointer;
-            transition: transform 0.3s ease;
-            display: inline-flex; /* Use flex for centering SVG */
+            display: inline-flex; /* Center the SVG */
             justify-content: center;
             align-items: center;
-            border-radius: 0; /* Ensure buttons are not circular */
+            transition: transform 0.3s ease; /* Smooth hover scaling */
         }
 
-        .button svg {
+        /* Default state of the icon */
+        .button svg 
             width: 35px;
             height: 35px;
-            transition: filter 0.3s ease; /* Add transition for glowing effect */
+            transition: filter 0.3s ease; /* Smooth glow transition */
+            fill: white; /* Icon fill color */
+            stroke: rgba(255, 255, 255, 0.5); /* Default glowing outline color */
+            stroke-width: 1; /* Outline width */
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); /* Default glow */
         }
 
-        .button:hover {
-            transform: scale(1.1);
-        }
-
-        .button:hover svg path {
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 1)); /* Glow effect on the fill parts of the icon */
+        /* Hover effect to intensify the glow */
+        .button:hover svg {
+            transform: scale(1.1); /* Slightly enlarge the icon */
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1)); /* Brighter glow on hover */
+            stroke: rgba(255, 255, 255, 1); /* Brighter outline color */
+            stroke-width: 1.5; /* Slightly thicker outline */
         }
 
 
