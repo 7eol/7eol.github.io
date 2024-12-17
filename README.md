@@ -1,11 +1,9 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biolink Test</title>
     <style>
-        /* @font-face to load custom font */
         @font-face {
             font-family: 'TT Norms Pro Regular';
             src: url('TT Norms Pro Regular.woff') format('woff');
@@ -13,7 +11,6 @@
             font-style: normal;
         }
 
-        /* Apply the custom font to the body */
         * {
             margin: 0;
             padding: 0;
@@ -21,7 +18,7 @@
         }
 
         body {
-            font-family: 'TT Norms Pro Regular', sans-serif; /* Use the custom font */
+            font-family: 'TT Norms Pro Regular', sans-serif;
             height: 100vh;
             overflow: hidden;
             background: black;
@@ -40,7 +37,7 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
-            filter: blur(10px); /* Initially apply blur */
+            filter: blur(10px);
             pointer-events: none;
             transition: filter 1s ease-in-out;
         }
@@ -79,14 +76,19 @@
         }
 
         .button {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            cursor: pointer;
             width: 50px;
             height: 50px;
+            position: relative;
+            cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .button a {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
         }
 
         .button svg {
@@ -95,7 +97,6 @@
             fill: white;
         }
 
-        /* Glow effect */
         .button::before {
             content: '';
             position: absolute;
@@ -165,9 +166,7 @@
                         </svg>
                     </a>
                 </div>
-
-                <!-- Add other buttons here -->
-
+                <!-- Add more buttons here -->
             </div>
         </div>
     </div>
@@ -181,30 +180,26 @@
     </div>
 
     <script>
-        // Set the default volume lower
         const audio = document.getElementById("background-audio");
-        audio.volume = 0.3;  // Set default volume to 30%
+        audio.volume = 0.3;
 
-        // Play video and audio when clicked anywhere
         document.body.addEventListener("click", function () {
             const video = document.getElementById("background-video");
             if (audio.paused && video.paused) {
                 video.play();
                 audio.play();
-                document.getElementById("overlay-message").style.display = "none"; // Hide the overlay message
-                document.getElementById("content").style.display = "block"; // Show the content
+                document.getElementById("overlay-message").style.display = "none";
+                document.getElementById("content").style.display = "block";
                 document.getElementById("content").style.opacity = 1;
-                video.style.filter = "blur(0)"; // Remove blur after play
+                video.style.filter = "blur(0)";
             }
         });
 
-        // Toggle volume slider
         document.getElementById("volume-btn").addEventListener("click", function () {
             const volumeSliderContainer = document.getElementById("volume-slider-container");
             volumeSliderContainer.style.display = volumeSliderContainer.style.display === "block" ? "none" : "block";
         });
 
-        // Change volume based on slider input
         document.getElementById("volume-slider").addEventListener("input", function () {
             audio.volume = this.value;
         });
