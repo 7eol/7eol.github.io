@@ -77,30 +77,28 @@
             gap: 10px;
         }
 
-       .button {
-            width: 50px;
-            height: 50px;
-            overflow: visible; /* Prevent clipping */
+        .button {
+            width: 30px;
+            height: 30px;
+            overflow: visible;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: inline-block;
+            display: inline-flex; /* Use flex for centering SVG */
+            justify-content: center;
+            align-items: center;
+            border-radius: 0; /* Ensure buttons are not circular */
+        }
 
-            /* Ensure no rounding */
-            border-radius: 0 !important; /* Force no rounding */
-    }
+        .button svg {
+            width: 35px;
+            height: 35px;
+        }
 
-    .button img {
-            width: 100%; /* Ensures the image fills the button */
-            height: auto; /* Maintains aspect ratio */
-            object-fit: contain; /* Prevents cropping */
-            object-position: center; /* Center-align the image */
-            border-radius: 0 !important; /* Force no rounding */
-    }
 
 
         .button:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glow effect around the image */
+            box-shadow: none
         }
 
         .volume-button {
