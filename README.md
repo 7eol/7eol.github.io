@@ -78,25 +78,25 @@
         }
 
        .button {
-            width: 50px; /* Keep this as intended dimensions */
+            width: 50px;
             height: 50px;
-            overflow: hidden;
+            overflow: visible; /* Prevent clipping */
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: inline-block;
 
-            /* Ensure no unintended border-radius */
-            border-radius: 0; /* Change from 50% or remove entirely */
-        }        
+            /* Ensure no rounding */
+            border-radius: 0 !important; /* Force no rounding */
+    }
 
-        }
+    .button img {
+            width: 100%; /* Ensures the image fills the button */
+            height: auto; /* Maintains aspect ratio */
+            object-fit: contain; /* Prevents cropping */
+            object-position: center; /* Center-align the image */
+            border-radius: 0 !important; /* Force no rounding */
+    }
 
-        .button img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* Ensures the full image is shown */
-            object-position: center; /* Centers the image inside the button */
-        }
 
         .button:hover {
             transform: scale(1.1);
