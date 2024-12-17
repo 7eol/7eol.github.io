@@ -77,12 +77,13 @@
             gap: 10px;
         }
 
+        /* Styling for buttons with hover glow effect */
         .button {
             width: 30px;
             height: 30px;
             overflow: visible;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
             display: inline-flex; /* Use flex for centering SVG */
             justify-content: center;
             align-items: center;
@@ -92,12 +93,17 @@
         .button svg {
             width: 35px;
             height: 35px;
+            transition: filter 0.3s ease; /* Add transition for glowing effect */
         }
 
         .button:hover {
             transform: scale(1.1);
-            box-shadow: none
         }
+
+        .button:hover svg path {
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 1)); /* Glow effect on the fill parts of the icon */
+        }
+
 
         .volume-button {
             position: fixed;
@@ -121,8 +127,8 @@
             width: 100px;
         }
     </style>
-</head>
-<body>
+       </head>
+            <body>
 
     <video class="background-video" id="background-video" muted loop>
         <source src="backgroundvideo.mp4" type="video/mp4">
