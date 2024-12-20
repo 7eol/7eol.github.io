@@ -77,24 +77,25 @@
             gap: 10px;
         }
 
-        .button {
+       .button {
             width: 60px; /* Set a fixed width */
             height: 60px; /* Set a fixed height */
             display: inline-flex; /* Use flex for centering SVG */
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-radius: 10px; /* Rounded corners */
             background-color: transparent; /* Remove background */
+            padding: 0; /* Remove padding */
         }
 
-        /* Add glow effect and scale on hover for buttons */
         .button:hover {
-            transform: scale(1.2); /* Slightly increase size */
-            box-shadow: 0 0 8px #ffffff; /* Glow effect */
-            filter: drop-shadow(0 0 8px #ffffff); /* Glow effect */
+            transform: scale(1.1); /* Slightly increase size */
+            box-shadow: 0 0 4px #ffffff; /* Glow effect */
+            filter: drop-shadow(0 0 4px #ffffff); /* Glow effect */
         }
+
 
         .volume-button {
             position: fixed;
