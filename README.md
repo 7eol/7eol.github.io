@@ -87,16 +87,36 @@
             justify-content: center;
             align-items: center;
             border-radius: 0; /* Ensure buttons are not circular */
+            position: relative;
         }
 
         .button svg {
             width: 35px;
             height: 35px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
         .button:hover {
             transform: scale(1.1);
-            box-shadow: none
+        }
+
+        .button:hover::before {
+            opacity: 1;
+            transform: scale(1.3);
         }
 
         .volume-button {
@@ -130,7 +150,7 @@
     </video>
 
     <div class="overlay-message" id="overlay-message">
-        Click anywhere to enter
+        click to enter...
     </div>
 
     <audio id="background-audio" loop>
@@ -140,7 +160,7 @@
 
     <div class="content" id="content">
         <div class="profile-container">
-            <img id="profile-img" src="pfp.gif" alt="Profile Picture">
+            <img id="profile-img" src="https://cdn.discordapp.com/avatars/987240998541361173/0382e18e4a3cfa1b505d8f85809a75cd.webp" alt="Profile Picture">
             <h1>7</h1> <!-- Changed to "7" -->
             <div class="buttons">
                 <div class="button">
@@ -204,15 +224,8 @@
 
         // Play video and audio when clicked anywhere
         document.body.addEventListener("click", function () {
-            const video = document.getElementById("background-video");
-            if (audio.paused && video.paused) {
-                video.play();
-                audio.play();
-                document.getElementById("overlay-message").style.display = "none"; // Hide the overlay message
-                document.getElementById("content").style.display = "block"; // Show the content
-                document.getElementById("content").style.opacity = 1;
-                video.style.filter = "blur(0)"; // Remove blur after play
-            }
+            const video = document
+
         });
 
         // Toggle volume slider
