@@ -87,36 +87,21 @@
             justify-content: center;
             align-items: center;
             border-radius: 0; /* Ensure buttons are not circular */
-            position: relative;
         }
 
         .button svg {
             width: 35px;
             height: 35px;
-            position: relative;
-            z-index: 1;
+            transition: filter 0.3s ease-in-out;
         }
 
-        .button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 50%;
-            box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
+        /* Glow effect for the buttons */
+        .button svg:not(:hover) {
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
         }
 
-        .button:hover {
-            transform: scale(1.1);
-        }
-
-        .button:hover::before {
-            opacity: 1;
-            transform: scale(1.3);
+        .button:hover svg {
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1)); /* Increase glow on hover */
         }
 
         .volume-button {
@@ -139,38 +124,6 @@
 
         .volume-slider {
             width: 100px;
-            -webkit-appearance: none;
-            appearance: none;
-            background: rgba(255, 255, 255, 0.3);
-            height: 4px;
-            outline: none;
-            border-radius: 5px;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .volume-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: white;
-            box-shadow: 0 0 10px 2px white;
-            position: relative;
-            z-index: 2;
-        }
-
-        .volume-slider::-moz-range-thumb {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: white;
-            box-shadow: 0 0 10px 2px white;
-        }
-
-        .volume-slider::-webkit-slider-runnable-track {
-            background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1));
         }
     </style>
 </head>
@@ -224,7 +177,15 @@
                 <div class="button">
                     <a target="_blank" href="https://github.com/7eol">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="2.05 2 19.95 19.46">
-                            <path fill="currentColor" fill-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974c0 4.406 2.857 8.145 6.821 9.465c.499.09.679-.217.679-.481c0-.237-.008-.865-.011-1.696c-2.775.602-3.361-1.338-3.361-1.338c-.452-1.152-1.107-1.459-1.107-1.459c-.905-.619.069-.605.069-.605c1.002.07 1.527 1.028 1.527 1.028c.89 1.524 2.336 1.084 2.902.829c.091-.645.351-1.085.635-1.334c-2.214-.251-4.542-1.107-4.542-4.93c0-1.087.389-1.979 1.024-2.675c-.101-.253-.446-1.268.099-2.64c0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336a9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742 1.093 2.742 1.093c.546 1.372.2 2.387.099 2.64c.636.696 1.024 1.588 1.024 2.675c0 3.832-2.335 4.675-4.557 4.92c.36.309.68.92.68 1.854c0 1.338-.012 2.418-.012 2.745c0 .268.18.577.684.479c3.963-1.321 6.82-5.059 6.82-9.463c0-5.509-4.464-9.974-9.973-9.974z"></path>
+                            <path fill="currentColor" fill-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974c0 4.406 2.857 8.145 6.821 9.465c.499.09.679-.217.679-.481c0-.237-.008-.865-.011-1.696c-2.775.602-3.361-1.338-3.361-1.338c-.452-1.152-1.107-1.459-1.107-1.459c-.905-.619.069-.605.069-.605c1.002.07 1.527 1.028 1.527 1.028c.89 1.524 2.336 1.084 2.902.829c.091-.645.351-1.085.635-1.334c-2.214-.251-4.542-1.107-4.542-4.93c0-1.087.389-1.979 1.024-2.675c-.101-.253-.446-1.268.099-2.64c0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336a9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021c.545 1.372.203 2.387.099 2.64c.64.696 1.024 1.587 1.024 2.675c0 3.833-2.33 4.675-4.552 4.922c.355.308.675.916.675 1.846c0 1.334-.012 2.41-.012 2.737c0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974C22 6.465 17.535 2 12.026 2z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="button">
+                    <a target="_blank" href="https://roblox.com/users/938926711">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0.16 0 23.68 24">
+                            <path fill="currentColor" d="M5.164 0L.16 18.928L18.836 24L23.84 5.072Zm8.747 15.354l-5.219-1.417l1.399-5.29l5.22 1.418l-1.4 5.29z"></path>
                         </svg>
                     </a>
                 </div>
@@ -232,21 +193,43 @@
         </div>
     </div>
 
-    <script>
-        const overlayMessage = document.getElementById('overlay-message');
-        const content = document.getElementById('content');
-        const backgroundVideo = document.getElementById('background-video');
-        const backgroundAudio = document.getElementById('background-audio');
+    <div class="volume-button" id="volume-btn">
+        <img src="volume-icon.png" alt="Volume Icon" width="20" height="20">
+    </div>
 
-        overlayMessage.addEventListener('click', () => {
-            overlayMessage.style.display = 'none';
-            content.style.display = 'block';
-            setTimeout(() => {
-                content.style.opacity = '1';
-            }, 50);
-            backgroundVideo.style.filter = 'none';
-            backgroundAudio.play();
+    <div class="volume-slider-container" id="volume-slider-container">
+        <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.01" value="0.3">
+    </div>
+
+    <script>
+        // Set the default volume lower
+        const audio = document.getElementById("background-audio");
+        audio.volume = 0.3;  // Set default volume to 30%
+
+        // Play video and audio when clicked anywhere
+        document.body.addEventListener("click", function () {
+            const video = document.getElementById("background-video");
+            if (audio.paused && video.paused) {
+                video.play();
+                audio.play();
+                document.getElementById("overlay-message").style.display = "none"; // Hide the overlay message
+                document.getElementById("content").style.display = "block"; // Show the content
+                document.getElementById("content").style.opacity = 1;
+                video.style.filter = "blur(0)"; // Remove blur after play
+            }
+        });
+
+        // Toggle volume slider
+        document.getElementById("volume-btn").addEventListener("click", function () {
+            const volumeSliderContainer = document.getElementById("volume-slider-container");
+            volumeSliderContainer.style.display = volumeSliderContainer.style.display === "block" ? "none" : "block";
+        });
+
+        // Change volume based on slider input
+        document.getElementById("volume-slider").addEventListener("input", function () {
+            audio.volume = this.value;
         });
     </script>
+
 </body>
 </html>
