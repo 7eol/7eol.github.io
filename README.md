@@ -77,7 +77,7 @@
             gap: 10px;
         }
 
-       /* Apply to buttons to ensure consistent size */
+      /* Apply to buttons to ensure consistent size and transition */
         .button {
             width: 50px; /* Set fixed size */
             height: 50px; /* Set fixed size */
@@ -85,30 +85,34 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            background-color: transparent; /* Ensure no background */
+            background-color: transparent; /* No background */
             border-radius: 50%; /* Circular shape */
-            overflow: hidden; /* Make sure overflow is hidden */
+            overflow: hidden; /* Hide any overflow */
             position: relative; /* To position the glow effect */
-            padding: 0; /* Remove any internal padding */
+            padding: 0; /* No padding */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
         }
 
-        /* Add hover effect and glow */
+        /* Add hover effect and glow around the icon */
         .button:hover {
-            transform: scale(1.1); /* Make the button grow slightly */
-            box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.7); /* Add glow */
+            transform: scale(1.1); /* Make the button grow */
+            box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.7); /* Add subtle glow effect around the button */
         }
-
-        /* For the button fill (icons), apply a glow effect on hover */
+        
+        /* Apply transition and glow effect only to the button's SVG icon */
         .button svg {
             width: 30px; /* Fixed width for icons */
             height: 30px; /* Fixed height for icons */
             transition: filter 0.3s ease-in-out; /* Smooth filter transition */
         }
 
-        /* Apply glow effect on the SVG fill when hovered */
+        /* Apply a glow effect to the icon itself when hovered */
         .button:hover svg {
             filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7)); /* Apply glow effect only to icon */
         }
+
+
+
 
         .volume-button {
             position: fixed;
