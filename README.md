@@ -89,12 +89,14 @@
             border-radius: 50%; /* Circular button shape */
             padding: 0; /* Remove padding */
             position: relative; /* Position the glow effect */
-            transition: transform 0.3s ease; /* Smooth scale transition */
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0); /* Subtle glow when not hovered */
+            transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for box-shadow and scale */
         }
 
         /* Hover effect on the button */
         .button:hover {
             transform: scale(1.1); /* Slightly increase size on hover */
+            box-shadow: 0 0 15px rgba(0, 123, 255, 1); /* Stronger blue glow on hover */
         }
 
         /* Styling for the button icon (SVG) */
@@ -103,30 +105,6 @@
             height: 30px; /* Set fixed size for icon */
             transition: filter 0.3s ease-in-out; /* Smooth transition for filter */
         }
-
-      /* Subtle glow effect when not hovered */
-        .button::after {
-            content: ''; /* Empty content for pseudo-element */
-            position: absolute; /* Position the glow effect */
-            top: 50%; /* Position the glow in the center */
-            left: 50%; /* Position the glow in the center */
-            transform: translate(-50%, -50%); /* Center the glow */
-            width: 100%; /* Make the glow width equal to the button */
-            height: 100%; /* Make the glow height equal to the button */
-            border-radius: 50%; /* Ensure the glow is circular */
-            background: rgba(255, 255, 255, 0.3); /* Softer white glow when not hovered */
-            opacity: 0.3; /* Subtle glow when not hovered */
-            transition: opacity 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-        }
-
-        /* Stronger glow effect when hovered */
-        .button:hover::after {
-            opacity: 1; /* Make the glow more visible on hover */
-            box-shadow: 0 0 15px rgba(255, 255, 255, 1); /* Stronger glow on hover */
-        }
-
-
-
 
         .volume-button {
             position: fixed;
