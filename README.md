@@ -77,7 +77,7 @@
             gap: 3px;
         }
 
-        /* Base button styling */
+       /* Base button styling */
         .button {
             width: 50px; /* Set button size */
             height: 50px; /* Set button size */
@@ -87,7 +87,6 @@
             cursor: pointer;
             background-color: transparent; /* No background */
             border-radius: 50%; /* Circular button shape */
-            overflow: visible; /* Allow overflow so the glow doesn't get cut off */
             padding: 0; /* Remove padding */
             position: relative; /* Position the glow effect */
             transition: transform 0.3s ease; /* Smooth scale transition */
@@ -105,7 +104,7 @@
             transition: filter 0.3s ease-in-out; /* Smooth transition for filter */
         }
 
-        /* Subtle glow effect when not hovered */
+      /* Subtle glow effect when not hovered */
         .button::after {
             content: ''; /* Empty content for pseudo-element */
             position: absolute; /* Position the glow effect */
@@ -115,16 +114,19 @@
             width: 100%; /* Make the glow width equal to the button */
             height: 100%; /* Make the glow height equal to the button */
             border-radius: 50%; /* Ensure the glow is circular */
-            background: rgba(255, 255, 255, 0.5); /* Soft white glow */
-            opacity: 0; /* Start with no glow */
+            background: rgba(255, 255, 255, 0.3); /* Softer white glow when not hovered */
+            opacity: 0.3; /* Subtle glow when not hovered */
             transition: opacity 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
         }
 
-        /* Glow effect on icon when hovered */
+        /* Stronger glow effect when hovered */
         .button:hover::after {
-            opacity: 1; /* Make the glow visible when hovered */
-            box-shadow: 0 0 10px rgba(255, 255, 255, 1); /* Stronger glow on hover */
+            opacity: 1; /* Make the glow more visible on hover */
+            box-shadow: 0 0 15px rgba(255, 255, 255, 1); /* Stronger glow on hover */
         }
+
+
+
 
         .volume-button {
             position: fixed;
