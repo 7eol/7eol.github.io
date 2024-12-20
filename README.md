@@ -78,22 +78,21 @@
         }
 
         .button {
-            width: 50px; /* Set a fixed width */
-            height: 50px; /* Set a fixed height */
-            overflow: visible;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+            width: 60px; /* Set a fixed width */
+            height: 60px; /* Set a fixed height */
             display: inline-flex; /* Use flex for centering SVG */
             justify-content: center;
             align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
             border-radius: 10px; /* Rounded corners */
-            background-color: rgba(255, 255, 255, 0.2); /* Background color */
+            background-color: transparent; /* Remove background */
         }
 
         /* Add glow effect and scale on hover for buttons */
         .button:hover {
             transform: scale(1.2); /* Slightly increase size */
-            box-shadow: none;
+            box-shadow: 0 0 8px #ffffff; /* Glow effect */
             filter: drop-shadow(0 0 8px #ffffff); /* Glow effect */
         }
 
@@ -138,7 +137,8 @@
 
     <div class="content" id="content">
         <div class="profile-container">
-            <img id="profile-img" src="pfp.gif" alt="Profile Picture">
+            <!-- Make sure the profile picture file exists and path is correct -->
+            <img id="profile-img" src="pfp.gif" alt="Profile Picture"> 
             <h1>7</h1> <!-- Changed to "7" -->
             <div class="buttons">
                 <div class="button">
