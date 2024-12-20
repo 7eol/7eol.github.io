@@ -77,25 +77,38 @@
             gap: 10px;
         }
 
-       .button {
-            width: 60px; /* Set a fixed width */
-            height: 60px; /* Set a fixed height */
-            display: inline-flex; /* Use flex for centering SVG */
+       /* Apply to buttons to ensure consistent size */
+        .button {
+            width: 50px; /* Set fixed size */
+            height: 50px; /* Set fixed size */
+            display: flex; /* Flex to center content */
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-radius: 10px; /* Rounded corners */
-            background-color: transparent; /* Remove background */
-            padding: 0; /* Remove padding */
+            background-color: transparent; /* Ensure no background */
+            border-radius: 50%; /* Circular shape */
+            overflow: hidden; /* Make sure overflow is hidden */
+            position: relative; /* To position the glow effect */
+            padding: 0; /* Remove any internal padding */
         }
 
+        /* Add hover effect and glow */
         .button:hover {
-            transform: scale(1.1); /* Slightly increase size */
-            box-shadow: 0 0 4px #ffffff; /* Glow effect */
-            filter: drop-shadow(0 0 4px #ffffff); /* Glow effect */
+            transform: scale(1.1); /* Make the button grow slightly */
+            box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.7); /* Add glow */
         }
 
+        /* For the button fill (icons), apply a glow effect on hover */
+        .button svg {
+            width: 30px; /* Fixed width for icons */
+            height: 30px; /* Fixed height for icons */
+            transition: filter 0.3s ease-in-out; /* Smooth filter transition */
+        }
+
+        /* Apply glow effect on the SVG fill when hovered */
+        .button:hover svg {
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7)); /* Apply glow effect only to icon */
+        }
 
         .volume-button {
             position: fixed;
