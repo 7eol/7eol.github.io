@@ -77,42 +77,38 @@
             gap: 10px;
         }
 
-      /* Apply to buttons to ensure consistent size and transition */
+             /* Base button styling */
         .button {
-            width: 50px; /* Set fixed size */
-            height: 50px; /* Set fixed size */
+            width: 50px; /* Set button size */
+            height: 50px; /* Set button size */
             display: flex; /* Flex to center content */
             justify-content: center;
             align-items: center;
             cursor: pointer;
             background-color: transparent; /* No background */
-            border-radius: 50%; /* Circular shape */
+            border-radius: 50%; /* Circular button shape */
             overflow: hidden; /* Hide any overflow */
+            padding: 0; /* Remove padding */
             position: relative; /* To position the glow effect */
-            padding: 0; /* No padding */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+            transition: transform 0.3s ease; /* Smooth scale transition */
         }
 
-        /* Add hover effect and glow around the icon */
+        /* Hover effect on the button */
         .button:hover {
-            transform: scale(1.1); /* Make the button grow */
-            box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.7); /* Add subtle glow effect around the button */
+            transform: scale(1.1); /* Slightly increase size on hover */
         }
-        
-        /* Apply transition and glow effect only to the button's SVG icon */
+
+        /* Styling for the button icon (SVG) */
         .button svg {
-            width: 30px; /* Fixed width for icons */
-            height: 30px; /* Fixed height for icons */
-            transition: filter 0.3s ease-in-out; /* Smooth filter transition */
+            width: 30px; /* Set fixed size for icon */
+            height: 30px; /* Set fixed size for icon */
+            transition: filter 0.3s ease-in-out; /* Smooth transition for filter */
         }
 
-        /* Apply a glow effect to the icon itself when hovered */
+        /* Glow effect on icon when hovered */
         .button:hover svg {
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7)); /* Apply glow effect only to icon */
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)); /* Apply glow around the icon */
         }
-
-
-
 
         .volume-button {
             position: fixed;
