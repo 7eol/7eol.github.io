@@ -150,7 +150,7 @@
     </video>
 
     <div class="overlay-message" id="overlay-message">
-        click to enter...
+        Click anywhere to enter
     </div>
 
     <audio id="background-audio" loop>
@@ -160,7 +160,7 @@
 
     <div class="content" id="content">
         <div class="profile-container">
-            <img id="profile-img" src="https://cdn.discordapp.com/avatars/987240998541361173/0382e18e4a3cfa1b505d8f85809a75cd.webp" alt="Profile Picture">
+            <img id="profile-img" src="pfp.gif" alt="Profile Picture">
             <h1>7</h1> <!-- Changed to "7" -->
             <div class="buttons">
                 <div class="button">
@@ -224,21 +224,43 @@
 
         // Play video and audio when clicked anywhere
         document.body.addEventListener("click", function () {
-            const video = document
+            const video = document.getElementById("background-video");
+            const content = document.getElementById("content");
+            const overlayMessage = document.getElementById("overlay-message");
 
+            if (audio.paused) {
+                audio.play();
+                video.play();
+                overlayMessage.style.display = "none";
+                content.style.display = "block";
+                setTimeout(() => {
+                    content.style.opacity = "1";
+                    video.style.filter = "blur(0)";
+                                }, 500); // Smooth transition effect
+            }
         });
 
-        // Toggle volume slider
-        document.getElementById("volume-btn").addEventListener("click", function () {
-            const volumeSliderContainer = document.getElementById("volume-slider-container");
-            volumeSliderContainer.style.display = volumeSliderContainer.style.display === "block" ? "none" : "block";
+        // Volume control
+        const volumeButton = document.getElementById("volume-btn");
+        const volumeSliderContainer = document.getElementById("volume-slider-container");
+        const volumeSlider = document.getElementById("volume-slider");
+
+        // Toggle volume slider visibility on volume button click
+        volumeButton.addEventListener("click", function (e) {
+            e.stopPropagation(); // Prevent triggering the body click event
+            const isVisible = volumeSliderContainer.style.display === "block";
+            volumeSliderContainer.style.display = isVisible ? "none" : "block";
         });
 
-        // Change volume based on slider input
-        document.getElementById("volume-slider").addEventListener("input", function () {
-            audio.volume = this.value;
+        // Adjust audio volume when slider value changes
+        volumeSlider.addEventListener("input", function () {
+            audio.volume = volumeSlider.value;
+        });
+
+        // Hide volume slider when clicking anywhere else
+        document.body.addEventListener("click", function () {
+            volumeSliderContainer.style.display = "none";
         });
     </script>
-
 </body>
 </html>
