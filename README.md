@@ -78,30 +78,22 @@
         }
 
         .button {
-            width: 30px;
-            height: 30px;
+            width: 40px; /* Initial width of button */
+            height: 40px; /* Initial height of button */
             overflow: visible;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
             display: inline-flex; /* Use flex for centering SVG */
             justify-content: center;
             align-items: center;
             border-radius: 0; /* Ensure buttons are not circular */
         }
 
-        .button svg {
-            width: 35px;
-            height: 35px;
-            transition: filter 0.3s ease-in-out;
-        }
-
-        /* Glow effect for the buttons */
-        .button svg:not(:hover) {
-            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
-        }
-
-        .button:hover svg {
-            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1)); /* Increase glow on hover */
+        /* Add glow effect and scale on hover for buttons */
+        .button:hover {
+            transform: scale(1.1); /* Slightly increase size */
+            box-shadow: none;
+            filter: drop-shadow(0 0 8px #ffffff); /* Glow effect */
         }
 
         .volume-button {
@@ -184,7 +176,7 @@
 
                 <div class="button">
                     <a target="_blank" href="https://roblox.com/users/938926711">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0.16 0 23.68 24">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="2.16 0 23.68 24">
                             <path fill="currentColor" d="M5.164 0L.16 18.928L18.836 24L23.84 5.072Zm8.747 15.354l-5.219-1.417l1.399-5.29l5.22 1.418l-1.4 5.29z"></path>
                         </svg>
                     </a>
@@ -197,6 +189,7 @@
         <img src="volume-icon.png" alt="Volume Icon" width="20" height="20">
     </div>
 
+    
     <div class="volume-slider-container" id="volume-slider-container">
         <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.01" value="0.3">
     </div>
