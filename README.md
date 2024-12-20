@@ -77,7 +77,7 @@
             gap: 10px;
         }
 
-             /* Base button styling */
+        /* Base button styling */
         .button {
             width: 50px; /* Set button size */
             height: 50px; /* Set button size */
@@ -105,9 +105,14 @@
             transition: filter 0.3s ease-in-out; /* Smooth transition for filter */
         }
 
+        /* Subtle glow effect when not hovered */
+        .button svg {
+            filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5)); /* Subtle glow */
+        }
+        
         /* Glow effect on icon when hovered */
         .button:hover svg {
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)); /* Apply glow around the icon */
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1)); /* Stronger glow on hover */
         }
 
         .volume-button {
