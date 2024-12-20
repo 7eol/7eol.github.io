@@ -77,7 +77,7 @@
             gap: 3px;
         }
 
-       /* Base button styling */
+        /* Base button styling */
         .button {
             width: 50px; /* Set button size */
             height: 50px; /* Set button size */
@@ -90,21 +90,27 @@
             padding: 0; /* Remove padding */
             position: relative; /* Position the glow effect */
             box-shadow: 0 0 5px rgba(255, 255, 255, 0); /* Subtle glow when not hovered */
-            transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for box-shadow and scale */
+            transition: transform 0.3s ease; /* Smooth transition for scale */
         }
 
-        /* Hover effect on the button */
-        .button:hover {
-            transform: scale(1.1); /* Slightly increase size on hover */
-            box-shadow: 0 0 15px rgba(0, 123, 255, 1); /* Stronger blue glow on hover */
-        }
-
-        /* Styling for the button icon (SVG) */
+        /* Glow effect applied directly to the SVG */
         .button svg {
             width: 30px; /* Set fixed size for icon */
             height: 30px; /* Set fixed size for icon */
-            transition: filter 0.3s ease-in-out; /* Smooth transition for filter */
+            transition: filter 0.3s ease-in-out; /* Smooth transition for glow effect */
+            filter: drop-shadow(0 0 8px rgba(0, 123, 255, 0.5)); /* Default subtle glow */
         }
+
+        /* Hover effect on the button (scaling effect for button) */
+        .button:hover {
+            transform: scale(1.1); /* Slightly increase size on hover */
+        }
+
+        /* Hover effect to increase the glow on SVG */
+        .button:hover svg {
+            filter: drop-shadow(0 0 15px rgba(0, 123, 255, 1)); /* Stronger blue glow on hover */
+        }
+
 
         .volume-button {
             position: fixed;
