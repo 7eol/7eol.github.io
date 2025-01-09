@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biolink Test</title>
     <style>
-        /* @font-face to load custom font */
+        
         @font-face {
             font-family: 'TT Norms Pro Regular';
             src: url('TT Norms Pro Regular.woff') format('woff');
@@ -12,7 +12,7 @@
             font-style: normal;
         }
 
-        /* Apply the custom font to the body */
+        
         * {
             margin: 0;
             padding: 0;
@@ -20,7 +20,7 @@
         }
 
         body {
-            font-family: 'TT Norms Pro Regular', sans-serif; /* Use the custom font */
+            font-family: 'TT Norms Pro Regular', sans-serif; 
             height: 100vh;
             overflow: hidden;
             background: black;
@@ -39,7 +39,7 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
-            filter: blur(10px); /* Initially apply blur */
+            filter: blur(10px);
             pointer-events: none;
             transition: filter 1s ease-in-out;
         }
@@ -77,38 +77,38 @@
             gap: 3px;
         }
 
-        /* Base button styling */
+        
         .button {
-            width: 50px; /* Set button size */
-            height: 50px; /* Set button size */
-            display: flex; /* Flex to center content */
+            width: 50px; 
+            height: 50px; 
+            display: flex; 
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            background-color: transparent; /* No background */
-            border-radius: 50%; /* Circular button shape */
-            padding: 0; /* Remove padding */
-            position: relative; /* Position the glow effect */
-            box-shadow: 0 0 5px rgba(255, 255, 255, 0); /* Subtle glow when not hovered */
-            transition: transform 0.3s ease; /* Smooth transition for scale */
+            background-color: transparent; 
+            border-radius: 50%; 
+            padding: 0; 
+            position: relative; 
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0); 
+            transition: transform 0.3s ease; 
         }
 
-        /* Glow effect applied directly to the SVG */
+       
         .button svg {
-            width: 30px; /* Set fixed size for icon */
-            height: 30px; /* Set fixed size for icon */
-            transition: filter 0.3s ease-in-out; /* Smooth transition for glow effect */
-            filter: drop-shadow(0 0 8px rgba(0, 123, 255, 0.5)); /* Default subtle glow */
+            width: 30px;
+            height: 30px;
+            transition: filter 0.3s ease-in-out;
+            filter: drop-shadow(0 0 8px rgba(0, 123, 255, 0.5));
         }
 
-        /* Hover effect on the button (scaling effect for button) */
+        
         .button:hover {
-            transform: scale(1.1); /* Slightly increase size on hover */
+            transform: scale(1.1); 
         }
 
-        /* Hover effect to increase the glow on SVG */
+       
         .button:hover svg {
-            filter: drop-shadow(0 0 15px rgba(0, 123, 255, 1)); /* Stronger blue glow on hover */
+            filter: drop-shadow(0 0 15px rgba(0, 123, 255, 1));
         }
 
 
@@ -139,23 +139,22 @@
 
     <video class="background-video" id="background-video" muted loop>
         <source src="backgroundvideo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        get a better pc brokie
     </video>
 
     <div class="overlay-message" id="overlay-message">
-        Click anywhere to enter
+        click tuah(to) enter
     </div>
 
     <audio id="background-audio" loop>
         <source src="backgroundaudio.mp3" type="audio/mp3">
-        Your browser does not support the audio tag.
+        get a better pc brokie.
     </audio>
 
     <div class="content" id="content">
         <div class="profile-container">
-            <!-- Make sure the profile picture file exists and path is correct -->
             <img id="profile-img" src="pfp.gif" alt="Profile Picture"> 
-            <h1>7</h1> <!-- Changed to "7" -->
+            <h1>7</h1>
             <div class="buttons">
                 <div class="button">
                     <a target="_blank" href="https://youtube.com/@7eyesofluck">
@@ -212,30 +211,27 @@
     </div>
 
     <script>
-        // Set the default volume lower
         const audio = document.getElementById("background-audio");
-        audio.volume = 0.3;  // Set default volume to 30%
+        audio.volume = 0.3;  
 
-        // Play video and audio when clicked anywhere
+       
         document.body.addEventListener("click", function () {
             const video = document.getElementById("background-video");
             if (audio.paused && video.paused) {
                 video.play();
                 audio.play();
-                document.getElementById("overlay-message").style.display = "none"; // Hide the overlay message
-                document.getElementById("content").style.display = "block"; // Show the content
+                document.getElementById("overlay-message").style.display = "none"; 
+                document.getElementById("content").style.display = "block"; 
                 document.getElementById("content").style.opacity = 1;
-                video.style.filter = "blur(0)"; // Remove blur after play
+                video.style.filter = "blur(0)"; 
             }
         });
 
-        // Toggle volume slider
         document.getElementById("volume-btn").addEventListener("click", function () {
             const volumeSliderContainer = document.getElementById("volume-slider-container");
             volumeSliderContainer.style.display = volumeSliderContainer.style.display === "block" ? "none" : "block";
         });
 
-        // Change volume based on slider input
         document.getElementById("volume-slider").addEventListener("input", function () {
             audio.volume = this.value;
         });
