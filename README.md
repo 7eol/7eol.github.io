@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ruination - Fortnite Software Download</title>
     <style>
+        /* Importing TT Norms Pro Regular font */
+        @font-face {
+            font-family: 'TT Norms Pro';
+            src: url('fonts/TTNormsPro-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,7 +20,7 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'TT Norms Pro', sans-serif; /* Apply the custom font */
             background-color: #111;
             color: #fff;
             line-height: 1.6;
