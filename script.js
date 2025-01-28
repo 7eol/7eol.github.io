@@ -2,7 +2,7 @@
 Main SpaceHey JavaScript
 (c) 2020-2024 SpaceHey.com - tibush GmbH
 */
-var url_base = 'https://spacehey.com'; // default/fallback
+var url_base = 'https://github.com'; // default/fallback
 
 
 var ready = (callback) => {
@@ -15,7 +15,7 @@ ready(() => { // DOM is fully loaded (https://tobiasahlin.com/blog/move-from-jqu
     }
 
     if (!navigator.userAgent.toLowerCase().includes('spacehey-app')) {
-        console.log("%cspacehey", "color:#1D4ED8;font-family:'Arial Rounded MT Bold','Helvetica Rounded','Comic Sans MS','Comic Sans','Arial Rounded MT Bold','Helvetica Rounded','Dyuthi',sans-serif;font-weight:bold;font-size: 3.5em;");
+        console.log("%cGitHub", "color:#1D4ED8;font-family:'Arial Rounded MT Bold','Helvetica Rounded','Comic Sans MS','Comic Sans','Arial Rounded MT Bold','Helvetica Rounded','Dyuthi',sans-serif;font-weight:bold;font-size: 3.5em;");
         console.log("%ca space for friends", "color:#1D4ED8;font-family:'Arial Rounded MT Bold','Helvetica Rounded','Comic Sans MS','Comic Sans','Arial Rounded MT Bold','Helvetica Rounded','Dyuthi',sans-serif;font-weight:bold;font-size: 1.8em;");
         console.log("%câš ï¸ Attention! %cBe careful when someone tells you to paste code into this console - they might try to steal your credentials and compromise your account!", "color:red;font-weight:bold;font-size:1.4em;", "font-size:1.2em;");
     }
