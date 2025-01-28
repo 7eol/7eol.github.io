@@ -42,9 +42,9 @@
     <meta name="twitter:label1" content="Status">
     <meta name="twitter:data1" content="coding.">
     <meta name="apple-itunes-app" content="app-id=6464676228">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://i.postimg.cc/Kzw1zpLd/images.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/Kzw1zpLd/images.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://i.postimg.cc/Kzw1zpLd/images.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://timg.cc/Kzw1zpLd/images.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://timg.cc/Kzw1zpLd/images.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://timg.cc/Kzw1zpLd/images.png">
     <link rel="mask-icon" href="https://spacehey.com/img/favicons/safari-pinned-tab.svg" color="#1D4ED8">
     <link rel="manifest" href="https://spacehey.com/img/favicons/site.webmanifest">
     <meta name="apple-mobile-web-app-title" content="SpaceHey">
@@ -561,7 +561,7 @@
                                         }
 
                                         .online img {
-                                            content: url("https://external-media.spacehey.net/media/s1ZaCwUUmbN44uNNfRhTegMxa4C4j6oW1tmx9MtHpuvk=/https://i.postimg.cc/fRdKvq5k/pixel-cat.gif");
+                                            content: url("https://external-media.spacehey.net/media/s1ZaCwUUmbN44uNNfRhTegMxa4C4j6oW1tmx9MtHpuvk=/https://timg.cc/fRdKvq5k/pixel-cat.gif");
                                             animation-name: none;
                                             visibility: visible;
                                             height: 90px;
@@ -618,7 +618,7 @@
                                         }
 
                                         .profile .contact:after {
-                                            background-image: url('https://external-media.spacehey.net/media/si2qjpIEYwooJcXZIu1K5v-3x2OGYxTmivhMYLtJlW0s=/https://i.postimg.cc/J0y7kXmV/image.jpg');
+                                            background-image: url('https://external-media.spacehey.net/media/si2qjpIEYwooJcXZIu1K5v-3x2OGYxTmivhMYLtJlW0s=/https://timg.cc/J0y7kXmV/image.jpg');
                                             display: block;
                                             width: 100%;
                                             background-position: center center;
@@ -712,8 +712,7 @@
 
                                 <div
                                     style="float:  ; max-height: 800px; position: fixed; right: 2px; bottom: 18px; z-index: 500;">
-                                    <img src="https://i.postimg.cc/XJ1dW9xT/1854393-182a2.gif"
-                                        / loading="lazy">
+                                    <img src="https://i.postimg.cc/XJ1dW9xT/1854393-182a2.gif" loading="lazy" alt="GIF Image" />
                                 </div>
                                 </p>
                                 
