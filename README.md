@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -713,7 +712,7 @@
 
                                 <div
                                     style="float:  ; max-height: 800px; position: fixed; right: 2px; bottom: 18px; z-index: 500;">
-                                    <img src="https://external-media.spacehey.net/media/sOpHkJV2kdMBRFA5eJoeQ7hs3SGAkuD4oQ_jBA_hyAqY=/https://i.postimg.cc/XJ1dW9xT/1854393-182a2.gif"
+                                    <img src="https://i.postimg.cc/XJ1dW9xT/1854393-182a2.gif"
                                         / loading="lazy">
                                 </div>
                                 </p>
@@ -738,7 +737,7 @@
                             <div class="friends-grid">
                                 <div class="person">
                                     
-                                    </a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -757,6 +756,3 @@
         
     <link rel="stylesheet"
         href="important.css">
-</body>
-
-</html>
